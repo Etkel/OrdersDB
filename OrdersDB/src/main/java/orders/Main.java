@@ -47,7 +47,7 @@ public class Main {
 
                 //clear context
                 em.clear();
-
+                //Check if relations are working
                 em.getTransaction().begin();
                 TypedQuery<Object> query=em.createQuery("SELECT o.productsSet FROM Orders o "+
                         "WHERE o.client.id = 1",Object.class);
