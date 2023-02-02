@@ -65,22 +65,22 @@ public class Main {
 
                 em.getTransaction().commit();
 
-//                while (true) {
-//                    System.out.println("1: add client");
-//                    System.out.println("2: add order");
-//                    System.out.println("3: add product");
-//                    System.out.print("-> ");
-//
-//                    String s = sc.nextLine();
-//                    switch (s) {
-//                        case "1" -> addClient(sc);
-//                        case "2" -> addOrder(sc);
-//                        case "3" -> addProduct(sc);
-//                        default -> {
-//                            return;
-//                        }
-//                    }
-//                }
+                while (true) {
+                    System.out.println("1: add client");
+                    System.out.println("2: add order");
+                    System.out.println("3: add product");
+                    System.out.print("-> ");
+
+                    String s = sc.nextLine();
+                    switch (s) {
+                        case "1" -> addClient(sc);
+                        case "2" -> addOrder(sc);
+                        case "3" -> addProduct(sc);
+                        default -> {
+                            return;
+                        }
+                    }
+                }
             } finally {
                 sc.close();
                 em.close();
