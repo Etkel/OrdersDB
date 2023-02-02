@@ -36,6 +36,7 @@ public class Main {
                 client1.addOrder(orders1);
                 client1.addOrder(orders2);
                 em.getTransaction().commit();
+                
                 //Create client2
                 em.getTransaction().begin();
                 Clients client2=new Clients("mad",22222222222l);
@@ -45,8 +46,6 @@ public class Main {
                 client2.addOrder(orders3);
                 em.getTransaction().commit();
 
-                //clear context
-                em.clear();
                 //Check if relations are working
                 em.getTransaction().begin();
                 TypedQuery<Object> query=em.createQuery("SELECT o.productsSet FROM Orders o "+
