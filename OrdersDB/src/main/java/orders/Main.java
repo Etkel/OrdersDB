@@ -47,7 +47,7 @@ public class Main {
                 em.getTransaction().commit();
 
                 //Check if relations are working
-                em.getTransaction().begin();
+               
                 TypedQuery<Object> query=em.createQuery("SELECT o.productsSet FROM Orders o "+
                         "WHERE o.client.id = 1",Object.class);
                 var res=query.getResultList();
@@ -61,8 +61,6 @@ public class Main {
                 System.out.println("------------------Orders from Products which id = 2----------------");
                 System.out.println(res2);
                 System.out.println();
-
-                em.getTransaction().commit();
 
                 while (true) {
                     System.out.println("1: add client");
