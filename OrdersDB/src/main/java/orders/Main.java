@@ -15,7 +15,7 @@ public class Main {
             try {
 
                 em.getTransaction().begin();
-//Create client1
+                //Create client1
                 Products products1=new Products("Candle",25);
                 Products products2=new Products("Phone",3);
                 em.persist(products1);
@@ -36,7 +36,7 @@ public class Main {
                 client1.addOrder(orders1);
                 client1.addOrder(orders2);
                 em.getTransaction().commit();
-//Create client2
+                //Create client2
                 em.getTransaction().begin();
                 Clients client2=new Clients("mad",22222222222l);
                 em.persist(client2);
