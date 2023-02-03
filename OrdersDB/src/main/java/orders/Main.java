@@ -200,17 +200,16 @@ public class Main {
         System.out.println("Your order is " + res);
         System.out.println("Do you approve it ? (y) - to approve");
         String answer = sc.nextLine();
+
+        em.getTransaction().begin();
         if (answer.equals("y")) {
-            em.getTransaction().begin();
             order.setStatus(Status.DONE.getV());
             client.addOrder(order);
-            em.getTransaction().commit();
         } else {
-            em.getTransaction().begin();
             order.setStatus(Status.CANCELLED.getV());
-            em.getTransaction().commit();
             System.out.println("Your order is Cancelled");
         }
+        em.getTransaction().commit();
     }
 
     private static Clients clientCheck(String name, Long phone) {
