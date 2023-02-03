@@ -29,9 +29,6 @@ public class Main {
 //
 //                Clients client1 = new Clients("sad", 11111111111L);
 //
-//                Clients client22 = new Clients("sad", 11111111111L);
-//                em.persist(client1);
-//
 //                TypedQuery<Clients> q = em.createQuery("SELECT o from Clients o", Clients.class);
 //                List<Clients> l = q.getResultList();
 //                System.out.println(l);
