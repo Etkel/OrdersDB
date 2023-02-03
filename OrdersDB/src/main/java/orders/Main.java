@@ -201,8 +201,8 @@ public class Main {
         System.out.println("Do you approve it ? (y) - to approve");
         String answer = sc.nextLine();
         if (answer.equals("y")) {
-            order.setStatus(Status.DONE.getV());
             em.getTransaction().begin();
+            order.setStatus(Status.DONE.getV());
             client.addOrder(order);
             em.getTransaction().commit();
         } else {
